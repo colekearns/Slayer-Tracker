@@ -8,24 +8,13 @@ import net.runelite.client.config.ConfigSection;
 @ConfigGroup("slayertracker")
 	public interface SlayerTrackerConfig extends Config
 {
-	// --- General Settings ---
-	@ConfigSection(
-			name = "General",
-			description = "General panel visibility settings",
-			position = 0,
-			closedByDefault = false
-	)
-	String generalSettings = "generalSettings";
-
 	@ConfigItem(
-			keyName = "showSidePanel",
-			name = "Show Side Panel",
-			description = "Toggle option to show side panel.",
-			section = generalSettings,
-			position = 1
+			keyName = "greeting",
+			name = "Welcome Greeting",
+			description = "The message to show to the user when they login"
 	)
-	default boolean showSidePanel()
+	default String greeting()
 	{
-		return true;
+		return "Hello";
 	}
 }
